@@ -18,6 +18,6 @@ function updateText(){
     if(careersIndex === careers.length){
         careersIndex = 0;
     }
-    setTimeout(updateText, 100);
+    setTimeout(updateText, 300);
 }
 
