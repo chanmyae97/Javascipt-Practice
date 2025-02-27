@@ -6,9 +6,35 @@
     <title>Auto Text Effect Animation</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
+<body class="m-0 min-h-screen flex justify-center items-center font-[\"Shadows_Into_Light\"] overflow-hidden" style="background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);">
+    <div class="container text-center text-white relative z-10 w-[600px] overflow-hidden">
+        <h1 class="text-5xl m-0 inline-block" style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);">I am a </h1>
     </div>
     <script src="index.js"></script>
+    <script>
+    // Dynamically create shooting stars
+    function createShootingStars() {
+        const angles = [315, 45];
+        const positions = [
+            { left: '60%', top: '40%' },
+            { left: '40%', top: '60%' },
+            { left: '70%', top: '30%' },
+            { left: '30%', top: '70%' },
+            { left: '90%', top: '10%' }
+        ];
+
+        positions.forEach((pos, index) => {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.setProperty('--angle', angles[index % 2] + 'deg');
+            star.style.left = pos.left;
+            star.style.top = pos.top;
+            star.style.animationDelay = (index * 0.4) + 's';
+            document.body.appendChild(star);
+        });
+    }
+
+    createShootingStars();
+    </script>
 </body>
 </html>
