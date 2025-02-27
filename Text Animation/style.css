@@ -623,10 +623,6 @@ video {
   display: flex;
 }
 
-.h-\[100px\] {
-  height: 100px;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -649,10 +645,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.font-\[\"Shadows_Into_Light\"\] {
-  font-family: "Shadows Into Light";
 }
 
 .font-\[\\\"Shadows_Into_Light\\\"\] {
