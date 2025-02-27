@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.fas {
+  font-size: 50px;
+  color: #ebfffc; /* or any color you prefer */
+}
+.wi {
+  font-size: 50px;
+  color: #ebfffc;
+}
+
+/* For Boxicons */
+.bx {
+  font-size: 50px;
+  color: #ebfffc;
+}
+.card {
+  width: 90%;
+  max-width: 470px;
+  /* background: linear-gradient(135deg, #2c3e50, #3498db); */
+  /* background: linear-gradient(135deg, #1a2980, #26d0ce); */
+  /* background: linear-gradient(135deg, #141e30, #243b55); */
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 49px 35px;
+  text-align: center;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.search button:hover {
+  width: 65px;
+  height: 65px;
+  background: #2c3e50;
+  color: #e0f7f4;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(235, 255, 252, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+#searchIcon {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
