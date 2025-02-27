@@ -6,7 +6,17 @@
     --text-color: #1f2937;
     --bg-color: #ffffff;
     --card-bg: #f3f4f6;
+    --hero-bg: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
     --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary-color: #38bdf8;
+    --secondary-color: #0ea5e9;
+    --text-color: #f8fafc;
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --hero-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 * {
@@ -32,10 +42,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-color);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-logo {
@@ -82,7 +93,21 @@ body {
     display: flex;
     align-items: center;
     padding: 0 5%;
-    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    background: var(--hero-bg);
+    background-size: 200% 200%;
+    animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero-content {

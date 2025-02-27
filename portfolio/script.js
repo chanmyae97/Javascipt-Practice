@@ -50,14 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateTheme() {
         if (isDark) {
-            root.style.setProperty('--bg-color', '#1a1a1a');
-            root.style.setProperty('--text-color', '#ffffff');
-            root.style.setProperty('--card-bg', '#2d2d2d');
+            root.style.setProperty('--bg-color', '#0f172a');
+            root.style.setProperty('--text-color', '#f8fafc');
+            root.style.setProperty('--card-bg', '#1e293b');
+            root.style.setProperty('--hero-bg', 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)');
+            root.style.setProperty('--primary-color', '#38bdf8');
+            root.style.setProperty('--secondary-color', '#0ea5e9');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         } else {
             root.style.setProperty('--bg-color', '#ffffff');
             root.style.setProperty('--text-color', '#1f2937');
             root.style.setProperty('--card-bg', '#f3f4f6');
+            root.style.setProperty('--hero-bg', 'linear-gradient(135deg, #dbeafe 0%, #eff6ff 50%, #dbeafe 100%)');
+            root.style.setProperty('--primary-color', '#2563eb');
+            root.style.setProperty('--secondary-color', '#3b82f6');
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
