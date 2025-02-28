@@ -12,7 +12,66 @@ body {
   height: 100vh;
   align-items: center;
 }
+.error-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+}
+.suggestions-container {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: calc(100% - 76px);
+  background: #ebfffc;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
+.suggestion-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background-color: #d4f3ef;
+}
+
+.search {
+  position: relative;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+}
 .fas {
   font-size: 50px;
   color: #ebfffc; /* or any color you prefer */
@@ -40,14 +99,12 @@ body {
   padding: 49px 35px;
   text-align: center;
 }
-
 .search {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .search input {
   border: 0;
   outline: 0;
@@ -60,7 +117,6 @@ body {
   margin-right: 16px;
   font-size: 18px;
 }
-
 .search button {
   border: 0;
   outline: 0;
@@ -71,7 +127,6 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
 .search button:hover {
   background: #2c3e50;
   color: #e0f7f4;
@@ -79,55 +134,46 @@ body {
   box-shadow: 0 0 10px rgba(235, 255, 252, 0.5);
   transition: all 0.3s ease-in-out;
 }
-
 #searchIcon {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
 }
-
 .weather-icons {
   width: 170px;
   margin-top: 30px;
 }
-
-
 .weather h1 {
   font-size: 80px;
   font-weight: 500;
 }
-
 .weather h2 {
   font-size: 45px;
   font-weight: 400;
   margin-top: -10px;
 }
-
-.details  {
+.details {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   margin-top: 50px;
 }
-
-.col1{
+.col1 {
   display: flex;
   align-items: center;
   text-align: left;
 }
-
 .col1 img {
   width: 40px;
   margin-right: 10px;
 }
-
-.humidity, .wind {
+.humidity,
+.wind {
   font-size: 25px;
   margin-top: -6px;
 }
-
-.weather{
+.weather {
   display: none;
 }
