@@ -73,8 +73,6 @@ body {
 }
 
 .search button:hover {
-  width: 65px;
-  height: 65px;
   background: #2c3e50;
   color: #e0f7f4;
   transform: scale(1.05);
@@ -87,4 +85,49 @@ body {
   height: auto;
   display: flex;
   justify-content: center;
+}
+
+.weather-icons {
+  width: 170px;
+  margin-top: 30px;
+}
+
+
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.details  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.col1{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.col1 img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.humidity, .wind {
+  font-size: 25px;
+  margin-top: -6px;
+}
+
+.weather{
+  display: none;
 }
