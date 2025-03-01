@@ -1,7 +1,7 @@
 const searchInput = document.querySelector(".search input");
 let suggestionsContainer = null;
 let lastApiCall = 0;
-const minCallInterval = 500; // Minimum time between API calls in milliseconds
+const minCallInterval = 1000; // Minimum time between API calls in milliseconds
 
 const geoApiOptions = {
   method: "GET",
