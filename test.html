@@ -104,22 +104,27 @@
 
 var addToArrayForm = function(num, k) {
     let kArr = Array.from(String(k), Number);
-    if (kArr.length !== num.length){
-        let diff = Math.abs(kArr.length - num.length);
-        if (kArr.length < num.length){
-            while (diff > 0){
-                kArr.unshift(0);
-            }
-        }else {
-            while (diff > 0);
-                num.unshift(0);
-        }
+    let result = [];
+    let carry = 0;
+
+    const maxLength = Math.max(num.length, kArr.length);
+    while (num.length < maxLength) num.unshift(0);
+    while (kArr.length < maxLength) kArr.unshift(0);
+
+
+    for (let i= num.length -1; i >=0; i-- ){
+        let sum = num[i] + kArr[i] + carry;
+        result.unshift(sum % 10);
+        carry = Math.floor(sum/10);
     }
-    console.log(kArr)
+    if(carry){
+        result.unshift(carry);
+    }
+
+    return result;
 };
 
-
-console.log(addToArrayForm([1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3], 809));
+console.log(addToArrayForm([1,2,0,0], 809));
     </script>
 </body>
 </html>
