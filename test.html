@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // plusOne = function (digits){
+        //     let i = digits.length - 1;
+        //     if(i >= 1){
+        //         if(digits[i] < 9){
+        //             digits[i]++;
+        //             console.log(digits);
+        //         }else{
+        //             let j = digits.length -2;
+        //             digits[j]++;
+        //             digits[i] = 0;
+        //             console.log(digits);
+        //         }
+        //     }else{
+        //         digits[i] = 0;
+        //         digits.unshift(1);
+        //         console.log(digits);               
+        //     }
+        // }
+
+//        let plusOne = function (digits) {
+
+//     for(let i = digits.length - 1; i >= 0; i--) {
+//         if (digits[i] < 9) {
+//             digits[i]++;  
+//             return digits;
+
+//         }
+//         digits[i] = 0; 
+//     }
+
+//     digits.unshift(1);
+//     return digits;
+// };
+//         console.log(plusOne(([2,3,9])));
+//         console.log(plusOne(([1,2,3])));
+//         console.log(plusOne(([9,9,9])));
+//         console.log(plusOne(([9])));
+//         console.log(plusOne(([9,9])));
+
+// var addBinary = function(a, b) {
+
+//     let aArr = a.split('').map(Number);
+//     let bArr = b.split('').map(Number);
+//     let result = [];
+//     let carry = 0;
+    
+//     if(aArr.length !== bArr.length){
+//         let diff = Math.abs(aArr.length - bArr.length);
+
+//         if(aArr.length < bArr.length){
+//             while (diff > 0){
+//                 aArr.unshift(0);
+//                 diff--;
+//             }
+//         }else{
+//             while (diff > 0){
+//                 bArr.unshift(0);
+//                 diff--;
+//             }
+//         }
+//     }
+
+    
+
+//     for(let i = aArr.length-1 ; i >= 0; i--)
+//     {
+//         let sum = aArr[i] + bArr[i]+ carry;
+//         result.unshift(sum % 2);
+//         carry= Math.floor(sum/2);
+//     }
+
+//     if(carry)
+//         result.unshift(carry);
+
+//     return result.join('');
+// }
+// console.log(addBinary("11","1"));
+// console.log(addBinary("1010","1011"));
+
+
+// var addToArrayForm = function(num, k) {
+//     let nums = +num.join('');
+//     let bignums = BigInt(nums)
+//     let bigk = BigInt(k)
+//    console.log(typeof nums);
+//    console.log(typeof bignums);
+//    BigInt( sum = bignums + bigk);
+//    console.log (sum);
+//    let result = Array.from(String(sum), Number);
+//    return result;
+   
+// };
+
+// console.log(addToArrayForm([1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3], 809));
+
+var addToArrayForm = function(num, k) {
+    let kArr = Array.from(String(k), Number);
+    if (kArr.length !== num.length){
+        let diff = Math.abs(kArr.length - num.length);
+        if (kArr.length < num.length){
+            while (diff > 0){
+                kArr.unshift(0);
+            }
+        }else {
+            while (diff > 0);
+                num.unshift(0);
+        }
+    }
+    console.log(kArr)
+};
+
+
+console.log(addToArrayForm([1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3], 809));
+    </script>
+</body>
+</html>
