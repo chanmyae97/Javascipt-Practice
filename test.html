@@ -123,17 +123,45 @@
       // console.log(addToArrayForm([1,2,0,0], 809));
 
       var addTwoNumber = function (l1, l2) {
-        let l1Arr = +l1.join("");
-        let l2Arr = +l2.join("");
         let result = [];
         let carry = 0;
 
-        const maxlength = Math.max(l1Arr.length, l2Arr.length);
-        while (l1Arr.length < maxlength) l1Arr.unshift(0);
-        while (l2Arr.length < maxlength) l2Arr.unshift(0);
+        class ListNode {
+          constructor(val) {
+            this.val = val;
+            this.next = null;
+          }
+        }
 
-        for (let i = l1Arr.length - 1; i >= 0; i--) {
-          let sum = l1Arr[i] + l2Arr[i] + carry;
+        function listNodeToArray(node){
+          let arr=[];
+          while(node){
+            arr.push(node.val);
+            node = node.next;
+          }
+          return arr.reverse();
+        }
+
+        function arrayToListNode(arr){
+          let dummy = new ListNode(0);
+          let current = dummy;
+          for(let num of arr){
+            current.next = new ListNode(num);
+            current = current.next;
+          }
+          return dummy.next;
+        }
+
+        let l1arr = listNodeToArray(l1);
+        let l2arr = listNodeToArray(l2);
+        
+
+        const maxlength = Math.max(l1arr.length, l2arr.length);
+        while (l1arr.length < maxlength) l1arr.unshift(0);
+        while (l2arr.length < maxlength) l2arr.unshift(0);
+
+        for (let i = l1arr.length - 1; i >= 0; i--) {
+          let sum = l1arr[i] + l2arr[i] + carry;
           result.unshift(sum % 10);
           carry = Math.floor(sum / 10);
         }
@@ -141,10 +169,13 @@
         if (carry) {
           result.unshift(carry);
         }
-        return result;
-      };
+        result.reverse();
+        return arrayToListNode(result);
+      }; 
 
-      console.log(addTwoNumber([2, 4, 3], [5, 6, 7]));
+      console.log(addTwoNumber([2, 4, 3], [5, 6, 4]));
+      console.log(addTwoNumber([0], [0]));
+      console.log(addTwoNumber([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
     </script>
   </body>
 </html>
