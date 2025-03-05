@@ -122,60 +122,103 @@
 
       // console.log(addToArrayForm([1,2,0,0], 809));
 
-      var addTwoNumber = function (l1, l2) {
-        let result = [];
-        let carry = 0;
+      // var addTwoNumber = function (l1, l2) {
+      //   let result = [];
+      //   let carry = 0;
 
-        class ListNode {
-          constructor(val) {
-            this.val = val;
-            this.next = null;
-          }
-        }
+      //   class ListNode {
+      //     constructor(val) {
+      //       this.val = val;
+      //       this.next = null;
+      //     }
+      //   }
 
-        function listNodeToArray(node){
-          let arr=[];
-          while(node){
-            arr.push(node.val);
-            node = node.next;
-          }
-          return arr.reverse();
-        }
+      //   function listNodeToArray(node){
+      //     let arr=[];
+      //     while(node){
+      //       arr.push(node.val);
+      //       node = node.next;
+      //     }
+      //     return arr.reverse();
+      //   }
 
-        function arrayToListNode(arr){
-          let dummy = new ListNode(0);
-          let current = dummy;
-          for(let num of arr){
-            current.next = new ListNode(num);
-            current = current.next;
-          }
-          return dummy.next;
-        }
+      //   function arrayToListNode(arr){
+      //     let dummy = new ListNode(0);
+      //     let current = dummy;
+      //     for(let num of arr){
+      //       current.next = new ListNode(num);
+      //       current = current.next;
+      //     }
+      //     return dummy.next;
+      //   }
 
-        let l1arr = listNodeToArray(l1);
-        let l2arr = listNodeToArray(l2);
+      //   let l1arr = listNodeToArray(l1);
+      //   let l2arr = listNodeToArray(l2);
         
 
-        const maxlength = Math.max(l1arr.length, l2arr.length);
-        while (l1arr.length < maxlength) l1arr.unshift(0);
-        while (l2arr.length < maxlength) l2arr.unshift(0);
+      //   const maxlength = Math.max(l1arr.length, l2arr.length);
+      //   while (l1arr.length < maxlength) l1arr.unshift(0);
+      //   while (l2arr.length < maxlength) l2arr.unshift(0);
 
-        for (let i = l1arr.length - 1; i >= 0; i--) {
-          let sum = l1arr[i] + l2arr[i] + carry;
-          result.unshift(sum % 10);
-          carry = Math.floor(sum / 10);
-        }
+      //   for (let i = l1arr.length - 1; i >= 0; i--) {
+      //     let sum = l1arr[i] + l2arr[i] + carry;
+      //     result.unshift(sum % 10);
+      //     carry = Math.floor(sum / 10);
+      //   }
 
-        if (carry) {
-          result.unshift(carry);
-        }
-        result.reverse();
-        return arrayToListNode(result);
-      }; 
+      //   if (carry) {
+      //     result.unshift(carry);
+      //   }
+      //   result.reverse();
+      //   return arrayToListNode(result);
+      // }; 
 
-      console.log(addTwoNumber([2, 4, 3], [5, 6, 4]));
-      console.log(addTwoNumber([0], [0]));
-      console.log(addTwoNumber([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
+      // console.log(addTwoNumber([2, 4, 3], [5, 6, 4]));
+      // console.log(addTwoNumber([0], [0]));
+      // console.log(addTwoNumber([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]));
+
+//     var lengthOfLongestSubstring = function(s) {
+//     let map = new Array(256).fill(-1);
+//     let length = 0, left= 0, right= 0, n= s.length;
+
+//     console.log(map)
+//     console.log(s.charCodeAt(right))
+//     while (right < n){
+//       if(map[s.charCodeAt(right)] !== -1){
+//         left = Math.max(map[s.charCodeAt(right)] + 1, left)
+//       }
+//       map[s.charCodeAt(right)] =right;
+//       length = Math.max(length, right-left + 1)
+//       right ++;
+//     }
+    
+//     return length;
+    
+// };
+
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+// // console.log(lengthOfLongestSubstring("bbbbb"));
+// // console.log(lengthOfLongestSubstring("pwwkew"));
+
+var lengthOfLongestSubstring = function(s) {
+let charSet = new Set();
+let left = 0;
+let maxLength = 0;
+let uniqueNumbers = [...new Set(s)]
+
+for (let right = 0; right < s.length; right++) {
+    while (charSet.has(s[right])) {  // 🔍 If duplicate exists
+        charSet.delete(s[left]);      // ❌ Remove leftmost character
+        left++;                        // 👉 Move left pointer
+    }
+    charSet.add(s[right]);  // ✅ Add new unique character
+    maxLength = Math.max(maxLength, right - left + 1);
+}
+console.log (typeof maxLength);
+return (maxLength, uniqueNumbers);
+
+}
+console.log(lengthOfLongestSubstring("abcabcbb"));
     </script>
   </body>
 </html>
